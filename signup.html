@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burgerizza | Login & Sign Up</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+:root{
+--primary:#FF6F00;
+--secondary:#0D1B2A;
+--bg:#FFFFFF;
+--muted:#64748B;
+--border:#E2E8F0;
+--text:#1E2B3C;
+}
+body{
+margin:0;
+padding:0;
+font-family:system-ui,Segoe UI,Roboto,sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+background:linear-gradient(135deg,#0D1B2A,#162c46,#0D1B2A);
+transition:background .3s,color .3s;
+color:var(--text);
+}
+body.dark{background:#0D1B2A;color:#fff;}
+
+.container{
+background:var(--bg);
+border-radius:28px;
+padding:40px 35px;
+width:380px;
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+transition:background .3s,color .3s;
+}
+body.dark .container{background:#162c46;color:#fff;}
+
+.logo{text-align:center;font-size:32px;font-weight:900;color:var(--secondary);margin-bottom:20px;}
+.logo span{color:var(--primary);}
+body.dark .logo{color:#fff;}
+body.dark .logo span{color:var(--primary);}
+
+.tabs{display:flex;justify-content:space-around;margin-bottom:25px;border-bottom:1px solid var(--border);}
+body.dark .tabs{border-color:#64748B;}
+.tab{padding-bottom:8px;cursor:pointer;font-weight:700;color:var(--muted);transition:.2s;}
+.tab.active{border-bottom:3px solid var(--primary);color:var(--secondary);}
+body.dark .tab.active{color:#fff;}
+
+form{display:none;flex-direction:column;}
+form.active{display:flex;}
+
+label{font-size:12px;font-weight:600;margin-bottom:4px;color:var(--secondary);}
+body.dark label{color:#fff;}
+
+.input-wrapper{display:flex;align-items:center;border:1.5px solid var(--border);border-radius:14px;padding:10px 12px;margin-bottom:14px;background:#fff;transition:.2s;}
+body.dark .input-wrapper{border-color:#64748B;background:#0D1B2A;}
+.input-wrapper:focus-within{border-color:var(--primary);box-shadow:0 0 0 4px rgba(255,111,0,.12);}
+.input-wrapper i{margin-right:8px;color:var(--muted);}
+body.dark .input-wrapper i{color:#fff;}
+
+.input-wrapper input{border:none;outline:none;width:100%;font-size:14px;background:transparent;color:var(--text);}
+body.dark .input-wrapper input{color:#fff;}
+
+.input-wrapper .toggle{cursor:pointer;margin-left:8px;color:var(--muted);}
+body.dark .input-wrapper .toggle{color:#fff;}
+
+.options-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:13px;color:var(--muted);}
+body.dark .options-row{color:#fff;}
+.options-row a{color:var(--secondary);text-decoration:none;border-bottom:1px dashed var(--primary);}
+.options-row a:hover{border-bottom-style:solid;color:var(--primary);}
+button{width:100%;background:var(--primary);border:none;padding:12px;border-radius:40px;color:#fff;font-weight:700;cursor:pointer;transition:.2s;margin-top:5px;}
+button:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(255,111,0,.3);}
+
+.error{font-size:12px;color:#e63946;margin:-8px 0 8px 2px;}
+
+.dark-toggle{
+position:absolute;top:15px;right:15px;cursor:pointer;font-size:20px;color:#fff;
+}
+
+@media(max-width:420px){.container{width:90%;padding:30px;}}
+</style>
+</head>
+<body>
+
+<div class="dark-toggle" id="darkToggle"><i class="fas fa-moon"></i></div>
+
+
+
+<style>
+    .btn:hover {
+        background-color: #e66400 !important;
+        transform: scale(1.02);
+    }
+</style>
+<div class="container">
+<div class="logo">Burger<span>izza</span></div>
+<div class="tabs">
+<div class="tab active" id="loginTab">Log In</div>
+<div class="tab" id="signupTab">Sign Up</div>
+</div>
+
+<form id="loginForm" class="active">
+<label>EMAIL</label>
+<div class="input-wrapper">
+<i class="far fa-envelope"></i>
+<input type="email" id="loginEmail">
+</div>
+<label>PASSWORD</label>
+<div class="input-wrapper">
+<i class="fas fa-lock"></i>
+<input type="password" id="loginPass">
+<i class="fas fa-eye toggle" id="toggleLogin"></i>
+</div>
+<div class="options-row">
+<label><input type="checkbox" id="rememberMe"> Remember me</label>
+<a href="#">Forgot Password?</a>
+</div>
+<button type="submit">LOG IN</button>
+</form>
+
+<form id="signupForm">
+<label>NAME</label>
+<div class="input-wrapper">
+<i class="far fa-user"></i>
+<input type="text" id="signName">
+</div>
+<label>EMAIL</label>
+<div class="input-wrapper">
+<i class="far fa-envelope"></i>
+<input type="email" id="signEmail">
+</div>
+<div id="emailErr" class="error"></div>
+<label>PASSWORD</label>
+<div class="input-wrapper">
+<i class="fas fa-lock"></i>
+<input type="password" id="signPass">
+<i class="fas fa-eye toggle" id="toggleSign"></i>
+</div>
+<div id="passErr" class="error"></div>
+<label>RE-TYPE PASSWORD</label>
+<div class="input-wrapper">
+<i class="fas fa-lock"></i>
+<input type="password" id="signRepass">
+<i class="fas fa-eye toggle" id="toggleRe"></i>
+</div>
+<div id="reErr" class="error"></div>
+<button type="submit">SIGN UP</button>
+</form>
+<div class="back"><a href="./Home1.html" class="text-decoration-none">
+    <button class="btn" style="background-color: #FF6F00; color: white; border-radius: 60px; padding: 8px 20px; font-weight: 700; font-size: 0.95rem; border: none; box-shadow: 0 8px 16px rgba(255, 111, 0, 0.3); transition: all 0.15s ease; cursor: pointer;">
+        ← Back
+    </button>
+</a></div>
+</div>
+
+<script>
+const loginTab=document.getElementById("loginTab");
+const signupTab=document.getElementById("signupTab");
+const loginForm=document.getElementById("loginForm");
+const signupForm=document.getElementById("signupForm");
+
+loginTab.onclick=()=>{loginTab.classList.add("active");signupTab.classList.remove("active");loginForm.classList.add("active");signupForm.classList.remove("active");};
+signupTab.onclick=()=>{signupTab.classList.add("active");loginTab.classList.remove("active");signupForm.classList.add("active");loginForm.classList.remove("active");};
+
+const toggleLogin=document.getElementById("toggleLogin");
+const toggleSign=document.getElementById("toggleSign");
+const toggleRe=document.getElementById("toggleRe");
+
+toggleLogin.onclick=()=>{const p=document.getElementById("loginPass");p.type=p.type==="password"?"text":"password";toggleLogin.classList.toggle("fa-eye-slash");};
+toggleSign.onclick=()=>{const p=document.getElementById("signPass");p.type=p.type==="password"?"text":"password";toggleSign.classList.toggle("fa-eye-slash");};
+toggleRe.onclick=()=>{const p=document.getElementById("signRepass");p.type=p.type==="password"?"text":"password";toggleRe.classList.toggle("fa-eye-slash");};
+
+document.getElementById("darkToggle").onclick=()=>{document.body.classList.toggle("dark");};
+
+function toast(msg){alert(msg);}
+
+signupForm.addEventListener("submit",e=>{
+e.preventDefault();
+document.getElementById("emailErr").textContent="";
+document.getElementById("passErr").textContent="";
+document.getElementById("reErr").textContent="";
+
+let ok=true;
+const reg=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const name=document.getElementById("signName").value.trim();
+const email=document.getElementById("signEmail").value.trim();
+const pass=document.getElementById("signPass").value;
+const repass=document.getElementById("signRepass").value;
+
+if(!reg.test(email)){document.getElementById("emailErr").textContent="Invalid email";ok=false;}
+if(pass.length<6){document.getElementById("passErr").textContent="Password min 6 chars";ok=false;}
+if(pass!==repass){document.getElementById("reErr").textContent="Passwords do not match";ok=false;}
+if(!ok)return;
+
+let users=JSON.parse(localStorage.getItem("users")||"[]");
+users.push({name,email,pass});
+localStorage.setItem("users",JSON.stringify(users));
+toast("Sign Up successful ✅");
+signupForm.reset();
+loginTab.click();
+});
+
+loginForm.addEventListener("submit",e=>{
+e.preventDefault();
+const email=document.getElementById("loginEmail").value.trim();
+const pass=document.getElementById("loginPass").value;
+const remember=document.getElementById("rememberMe").checked;
+
+let users=JSON.parse(localStorage.getItem("users")||"[]");
+const user=users.find(u=>u.email===email && u.pass===pass);
+if(user){toast("Logged In ✅");if(remember)localStorage.setItem("currentUser",JSON.stringify(user));}
+else toast("Invalid credentials ❌");
+});
+
+
+window.addEventListener("load",()=>{
+const current=JSON.parse(localStorage.getItem("currentUser")||"null");
+if(current){document.getElementById("loginEmail").value=current.email;document.getElementById("loginPass").value=current.pass;document.getElementById("rememberMe").checked=true;}
+});
+</script>
+</body>
+</html>

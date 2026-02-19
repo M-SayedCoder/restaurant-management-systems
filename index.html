@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Interface</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/Home1.css">
+  <link rel="stylesheet" href="./css/sidbar.css">
+
+</head>
+
+<body class="position-relative">
+  
+
+  <div class="sidbarlayer vw-100">
+    <div class="sid header-1 py-3 position-fixed top-0  z-3" style="max-width:400px; top:80px !important;">
+
+
+      
+      <div class="card-custom">
+        <a href="./edit.html" class="list-item">
+          <div class="item-left">
+            <div class="icon-circle"><i class="bi bi-person text-warning"></i></div>
+            Personal Info
+          </div>
+          <i class="bi bi-chevron-right"></i>
+        </a>
+        <a href="./Address.html" class="list-item">
+          <div class="item-left">
+            <div class="icon-circle"><i class="bi bi-geo-alt text-primary"></i></div>
+            Addresses
+          </div>
+          <i class="bi bi-chevron-right"></i>
+        </a>
+      </div>
+
+      
+      <div class="card-custom">
+        <a href="Mycart.html" class="list-item">
+          <div class="item-left">
+            <div class="icon-circle"><i class="bi bi-cart text-primary"></i></div>
+            Cart
+          </div>
+          <i class="bi bi-chevron-right"></i>
+        </a>
+        <a href="#" class="list-item">
+          <div class="item-left">
+            <div class="icon-circle"><i class="bi bi-heart text-danger"></i></div>
+            Favourite
+          </div>
+          <i class="bi bi-chevron-right"></i>
+        </a>
+        <a href="checkout.html" class="list-item">
+          <div class="item-left">
+            <div class="icon-circle"><i class="bi bi-credit-card text-primary"></i></div>
+            Payment Method
+          </div>
+          <i class="bi bi-chevron-right"></i>
+        </a>
+      </div>
+
+      
+      <div class="card-custom">
+        <a href="#" class="list-item">
+          <div class="item-left">
+            <div class="icon-circle"><i class="bi bi-question-circle text-danger"></i></div>
+            FAQs
+          </div>
+          <i class="bi bi-chevron-right"></i>
+        </a>
+        <a href="../Chef App/reviews.html" class="list-item">
+          <div class="item-left">
+            <div class="icon-circle"><i class="bi bi-chat-dots text-success"></i></div>
+            User Reviews
+          </div>
+          <i class="bi bi-chevron-right"></i>
+        </a>
+        <a href="#" class="list-item">
+          <div class="item-left">
+            <div class="icon-circle"><i class="bi bi-gear text-primary"></i></div>
+            Settings
+          </div>
+          <i class="bi bi-chevron-right"></i>
+        </a>
+      </div>
+
+      <!-- Logout -->
+      <div class="card-custom">
+        <a href="#" class="list-item logout">
+          <div class="item-left">
+            <div class="icon-circle"><i class="bi bi-box-arrow-right text-danger"></i></div>
+            Log Out
+          </div>
+          <i class="bi bi-chevron-right"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+  <!-- ! end of sidbar -->
+
+
+  <!-- start Header -->
+  <header class="border-bottom bg-white sticky-top">
+    <div class="container py-3">
+      <div class="row align-items-center">
+        <div class="col-md-4 d-flex align-items-center gap-3">
+          <div class="menu-icon" id="menuToggle">
+            <i class="bi bi-list"></i>
+          </div>
+          <span class="fw-bold fs-5">Burgerizza</span>
+        </div>
+
+        <div class="col-md-4 text-center text-white">
+.
+        </div>
+
+        <div class="col-md-4 d-flex justify-content-end align-items-center gap-3">
+
+          <!-- Sign Up Button -->
+          <a href="./signup.html" class="text-decoration-none">
+            <button class="btn"
+              style="background-color: #FF6F00; color: white; border-radius: 60px; padding: 8px 20px; font-weight: 700; font-size: 0.95rem; border: none; box-shadow: 0 8px 16px rgba(255, 111, 0, 0.3); transition: all 0.15s ease;">
+              Login / Sign Up
+            </button>
+          </a>
+
+          <!-- Cart Icon -->
+          <div class="position-relative cart-icon">
+            <a href="./Mycart.html">
+              <i class="bi bi-bag" style="color: #0D1B2A; font-size: 1.5rem;"></i>
+              <span class="badge bg-danger position-absolute top-0 start-100 translate-middle"
+                style="background-color: #FF6F00 !important;">2</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <style>
+    /* Hover effect for buttons */
+    .btn:hover {
+      background-color: #e66400 !important;
+      transform: scale(1.02);
+    }
+
+    /* Cart icon hover */
+    .cart-icon a:hover i {
+      color: #FF6F00 !important;
+      transition: color 0.15s ease;
+    }
+  </style>
+  <!--end Header-->
+
+  <main class="container mt-4">
+
+
+    <h2 class="fw-semibold mb-4">Good Afternoon!</h2>
+
+    <!-- Search -->
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <div class="input-group input-group-lg">
+          <span class="input-group-text bg-light border-0">
+            <i class="bi bi-search"></i>
+          </span>
+          <input type="text" class="form-control bg-light border-0" placeholder="Search dishes, restaurants">
+        </div>
+      </div>
+    </div>
+
+    <!-- Categories Header -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h4 class="fw-semibold mb-0">All Categories</h4>
+      <a href="#" class="text-decoration-none fw-medium">
+        See All <i class="bi bi-chevron-right"></i>
+      </a>
+    </div>
+
+    <!-- Categories -->
+    <div class="row g-3 mb-5">
+
+
+      <div class="col-6 col-md-2">
+        <a href="./allCat.htm" class="text-decoration-none">
+          <div class="category-pill active">
+            <span class="category-dot">
+              <img src="images/all.jpg" alt="All">
+            </span>
+            <span class="category-text text-black">All</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="col-6 col-md-2">
+        <div class="category-pill">
+          <span class="category-dot">
+            <img src="images/Hotdog.jpg" alt="Hot Dog">
+          </span>
+          <span class="category-text">Hot Dog</span>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <div class="category-pill">
+          <span class="category-dot">
+            <img src="images/Burger.avif" alt="Burger">
+          </span>
+          <span class="category-text">Burger</span>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <div class="category-pill">
+          <span class="category-dot">
+            <img src="images/Pizza.jpg" alt="Pizza">
+          </span>
+          <span class="category-text">Pizza</span>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-2">
+        <div class="category-pill">
+          <span class="category-dot">
+            <img src="images/pasta.webp" alt="Pasta">
+          </span>
+          <span class="category-text">Pasta</span>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+
+  <div class="container mt-5">
+
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h5 class="fw-semibold mb-0">Open Restaurants</h5>
+      <a href="#" class="text-decoration-none">
+        See All <i class="bi bi-chevron-right"></i>
+      </a>
+    </div>
+
+
+    <div class="row g-4">
+
+      <!-- Restaurant 1 -->
+      <div class="col-md-4">
+        <a href="./Detalis.htm" class="text-decoration-none">
+          <div class="restaurant-card">
+
+            <div class="restaurant-img">
+              <img src="images/Rose Garden Restaurant.jpeg" alt="Rose Garden Restaurant text-dark">
+            </div>
+
+            <div class="restaurant-body">
+              <h6 class="fw-semibold mb-1 text-dark">Rose Garden Restaurant</h6>
+              <p class="text-muted small mb-2 text-dark">
+                Burger · Chicken · Rice · Wings
+              </p>
+
+              <div class="d-flex align-items-center gap-3 small">
+                <span class="rating">
+                  <i class="bi bi-star-fill"></i> 4.7
+                </span>
+                <span class="text-muted">
+                  <i class="bi bi-truck"></i> Free
+                </span>
+                <span class="text-muted">
+                  <i class="bi bi-clock"></i> 20 min
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </a>
+      </div>
+
+      <!-- Restaurant 2 -->
+      <div class="col-md-4">
+        <a href="./Detalis.htm" class="text-decoration-none">
+          <div class="restaurant-card">
+
+            <div class="restaurant-img">
+              <img src="images/Italiano Pizza House.jpg" alt="Italiano Pizza House">
+            </div>
+
+            <div class="restaurant-body">
+              <h6 class="fw-semibold mb-1 text-dark">Italiano Pizza House</h6>
+              <p class="text-muted small mb-2 text-dark">
+                Pizza · Pasta · Drinks
+              </p>
+
+              <div class="d-flex align-items-center gap-3 small">
+                <span class="rating">
+                  <i class="bi bi-star-fill"></i> 4.5
+                </span>
+                <span class="text-muted">
+                  <i class="bi bi-truck"></i> Free
+                </span>
+                <span class="text-muted">
+                  <i class="bi bi-clock"></i> 25 min
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </a>
+      </div>
+
+      <!-- Restaurant:3 -->
+      <div class="col-md-4">
+        <a href="./Detalis.htm" class="text-decoration-none">
+          <div class="restaurant-card">
+
+            <div class="restaurant-img">
+              <img src="images/Pasta House.jpeg" alt="Pasta House">
+            </div>
+
+            <div class="restaurant-body">
+              <h6 class="fw-semibold mb-1 text-dark">Pasta House</h6>
+              <p class="text-muted small mb-2 text-dark">
+                Pasta · Alfredo · Marinara · Italian
+              </p>
+
+              <div class="d-flex align-items-center gap-3 small">
+                <span class="rating ">
+                  <i class="bi bi-star-fill"></i> 4.8
+                </span>
+                <span class="text-muted">
+                  <i class="bi bi-truck"></i> Free
+                </span>
+                <span class="text-muted">
+                  <i class="bi bi-clock"></i> 22 min
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </a>
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-3 mt-5 px-5">
+    <div class="container-fluid">
+      <div class="row">
+
+        <!-- Brand -->
+        <div class="col-md-4 mb-4">
+          <h5 class="fw-bold text-warning mb-3">Burgerizza</h5>
+          <p class="small text-white-50">
+            Delicious food delivered to your doorstep. Experience the best taste in town with our curated menu.
+          </p>
+          <div class="d-flex gap-3 social-links">
+            <a href="#" class="text-white-50"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="col-md-2 mb-4">
+          <h6 class="fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link">Home</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link">Menu</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link">Offers</a></li>
+            <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold mb-3">Contact Us</h6>
+          <ul class="list-unstyled small text-white-50">
+            <li class="mb-2"><i class="bi bi-geo-alt me-2 text-warning"></i> 123 Food Street, City</li>
+            <li class="mb-2"><i class="bi bi-telephone me-2 text-warning"></i> +1 234 567 890</li>
+            <li class="mb-2"><i class="bi bi-envelope me-2 text-warning"></i> support@burgerizza.com</li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold mb-3">Newsletter</h6>
+          <p class="small text-white-50">Subscribe for latest updates.</p>
+          <div class="input-group">
+            <input type="text" class="form-control form-control-sm border-0" placeholder="Email Address">
+            <button class="btn btn-warning btn-sm" type="button"><i class="bi bi-send-fill"></i></button>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="border-secondary opacity-25">
+
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="small text-white-50 mb-0">&copy; 2024 Burgerizza. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <div class="small">
+            <a href="#" class="text-white-50 text-decoration-none me-3 footer-link">Privacy Policy</a>
+            <a href="#" class="text-white-50 text-decoration-none footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="./js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

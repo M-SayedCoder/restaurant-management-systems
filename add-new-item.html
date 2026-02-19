@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add New Item</title>
+
+<style>
+:root{
+    --main:#ff6f00;
+    --bg:#f5f6f8;
+    --card:#ffffff;
+    --gray:#f3f4f6;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:var(--bg);
+    display:flex;
+    justify-content:center;
+    padding:60px 20px;
+}
+
+.form-container{
+    width:700px;
+    background:var(--card);
+    padding:40px;
+    border-radius:30px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.header h2{
+    font-size:28px;
+}
+
+.back{
+    text-decoration:none;
+    background:var(--gray);
+    padding:10px 18px;
+    border-radius:20px;
+    color:#333;
+}
+
+
+.input-group{
+    margin-bottom:25px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.input-group input,
+.input-group textarea{
+    width:100%;
+    padding:14px;
+    border-radius:15px;
+    border:1px solid #ddd;
+    background:var(--gray);
+    outline:none;
+}
+
+textarea{
+    resize:none;
+    height:90px;
+}
+
+
+.upload-area{
+    display:flex;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.upload-box{
+    flex:1;
+    border:2px dashed #ddd;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    cursor:pointer;
+    background:var(--gray);
+}
+
+.upload-box input{
+    display:none;
+}
+
+
+.price-section{
+    display:flex;
+    gap:20px;
+}
+
+.price-section input{
+    flex:1;
+}
+
+.ingredients{
+    margin:25px 0;
+}
+
+.ingredients h4{
+    margin-bottom:15px;
+}
+
+.ingredients-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(120px,1fr));
+    gap:15px;
+}
+
+.ingredients-grid label{
+    background:var(--gray);
+    padding:12px;
+    border-radius:15px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.ingredients-grid input{
+    display:none;
+}
+
+.ingredients-grid input:checked + label{
+    background:var(--main);
+    color:#fff;
+}
+
+.save-btn{
+    width:100%;
+    margin-top:30px;
+    background:var(--main);
+    border:none;
+    padding:18px;
+    border-radius:20px;
+    font-size:18px;
+    font-weight:600;
+    color:#fff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.save-btn:hover{
+    background:#e65c00;
+}
+</style>
+</head>
+<body>
+
+<form class="form-container" action="/save-item" method="POST" enctype="multipart/form-data">
+
+    <div class="header">
+        <a href="#" class="back">← Back</a>
+        <h2>Add New Item</h2>
+        <span></span>
+    </div>
+
+    <div class="input-group">
+        <label>Item Name</label>
+        <input type="text" name="item_name" placeholder="Item name" required>
+    </div>
+
+    <div class="input-group">
+        <label>Upload Photo/Video</label>
+        <div class="upload-area">
+            <label class="upload-box">
+                Upload
+                <input type="file" name="media">
+            </label>
+            <div class="upload-box"></div>
+        </div>
+    </div>
+
+
+    <div class="input-group">
+        <label>Price</label>
+        <div class="price-section">
+            <input type="number" name="price" placeholder="$50" required>
+            <input type="number" name="discount" placeholder="Discount %">
+        </div>
+    </div>
+
+    <div class="ingredients">
+        <h4>Ingredients</h4>
+        <div class="ingredients-grid">
+
+            <input type="checkbox" id="chicken" name="ingredients[]" value="Chicken">
+            <label for="chicken">Chicken</label>
+
+            <input type="checkbox" id="cheese" name="ingredients[]" value="Cheese">
+            <label for="cheese">Cheese</label>
+
+            <input type="checkbox" id="onion" name="ingredients[]" value="Onion">
+            <label for="onion">Onion</label>
+
+            <input type="checkbox" id="beef" name="ingredients[]" value="Beef">
+            <label for="beef">Beef</label>
+
+            <input type="checkbox" id="salt" name="ingredients[]" value="Salt">
+            <label for="salt">Salt</label>
+
+        </div>
+    </div>
+
+    <div class="input-group">
+        <label>Description</label>
+        <textarea name="description" placeholder="Item description..."></textarea>
+    </div>
+
+    <button type="submit" class="save-btn">SAVE CHANGES</button>
+
+</form>
+
+</body>
+</html>
