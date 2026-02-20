@@ -68,10 +68,5 @@ Burgerizza is a web-based restaurant management and online ordering application 
 - Omar Elhadedy
 - Omar Salah
 - Mazen Mohamed
-- Shehab Eldin Mohamed
-
----
-
-## License
-
-This project is licensed under the MIT License.
+- Shehab Eldin Mohamed 
+- Ahmed Alaa 
