@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Cart · Orange & Navy</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="./assets/css/cart.css">
+</head>
+<body>
+
+<div class="mode-toggle">
+    <button id="editModeBtn" class="toggle-btn active"><i class="fas fa-pen"></i> Edit Cart</button>
+    <button id="doneModeBtn" class="toggle-btn"><i class="fas fa-check-circle"></i> My Cart (Done)</button>
+</div>
+
+<div class="cart-card" id="mainCartCard">
+    <div class="cart-header">
+        <h1><i class="fas fa-shopping-cart"></i> Cart</h1>
+        <span class="header-action-btn" id="headerActionBtn">EDIT ITEMS</span>
+    </div>
+
+    <div class="cart-items" id="cartItemsContainer">
+        <div class="item-row">
+            <div class="item-info">
+                <span class="item-name">Pizza Calzone</span>
+                <span class="item-cuisine">European</span>
+                <div class="price-size-group">
+                    <span class="item-price">$64</span>
+                    <span class="item-size">14''</span>
+                </div>
+            </div>
+            <div class="quantity-wrapper"></div>
+        </div>
+        <div class="item-row">
+            <div class="item-info">
+                <span class="item-name">Pizza Calzone</span>
+                <span class="item-cuisine">European</span>
+                <div class="price-size-group">
+                    <span class="item-price">$32</span>
+                    <span class="item-size">14''</span>
+                </div>
+            </div>
+            <div class="quantity-wrapper"></div>
+        </div>
+    </div>
+
+    <div class="delivery-section">
+        <div class="address-box">
+            <span class="address-title">DELIVERY ADDRESS <span class="edit-orange">EDIT</span></span>
+            <span class="address-text">2118 Thornridge Cir. Syracuse</span>
+        </div>
+    </div>
+
+    <div class="total-row">
+        <span class="total-label">TOTAL:</span>
+        <div class="total-value">
+            <span class="total-amount">$96</span>
+            <span class="breakdown-link">Breakdown ></span>
+        </div>
+    </div>
+
+    <a href="checkout.html">
+        <button class="place-order-btn">PLACE ORDER</button>
+    </a>
+</div>
+
+<script src="./assets/js/cart.js"></script>
+</body>
+</html>
